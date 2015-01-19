@@ -12,9 +12,25 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
+    
+    var taskArray:[Dictionary<String,String>] = []
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let task1:Dictionary<String,String> = ["task":"Study French","subtask":"Verbs","date":"01/02/2015"]
+        let task2:Dictionary<String,String> = ["task":"East Dinner","subtask":"East burgers","date":"02/02/2015"]
+        let task3:Dictionary<String,String>= ["task":"Gym","subtask":"leg day","date":"03/02/2015"]
+        
+        taskArray = [task1,task2,task3]
+        
+        println(task1["task"])
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return taskArray.count
     }
     
     
@@ -34,10 +50,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         println(indexPath.row)
         
+        let taskDict:Dictionary = taskArray[indexPath.row]
+        
         var cell: TaskCell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskCell
-        cell.taskLabel.text = "Do something cool"
-        cell.descriptionLabel.text = "Learn to to formation skydiving"
-        cell.taskDateLabel.text = "01/02/2015"
+        cell.taskLabel.text = taskDict["task"]
+        cell.descriptionLabel.text = taskDict["subtask"]
+        cell.taskDateLabel.text = taskDict["date"]
         
         return cell
     }
