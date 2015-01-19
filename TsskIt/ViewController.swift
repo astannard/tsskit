@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     
     
-    var taskArray:[Dictionary<String,String>] = []
+    var taskArray:[TaskModel] = []
     
     
     
@@ -23,19 +23,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let task1:Dictionary<String,String> = ["task":"Study French","subtask":"Verbs","date":"01/02/2015"]
-        let task2:Dictionary<String,String> = ["task":"East Dinner","subtask":"East burgers","date":"02/02/2015"]
-        let task3:Dictionary<String,String>= ["task":"Gym","subtask":"leg day","date":"03/02/2015"]
+        let task1 = TaskModel(task: "Study French", subTask: "Verbs", date: "01/02/2015")
+        let task2 = TaskModel(task: "Eat dinner", subTask: "burgers", date: "01/02/2015")
+
+        taskArray = [task1,task2,TaskModel(task: "Workout", subTask: "gym", date: "02/02/2015")]
         
-        taskArray = [task1,task2,task3]
-        
-        println(task1["task"])
+        self.tableView.reloadData()
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func   prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "showTaskDetail"{
+            let detailVC: TaskDetailViewController = segue.destinationViewController as TaskDetailViewController
+            let indexPath = self.tableView.indexPathForSelectedRow()
+            let thisTask = taskArray[indexPath!.row]
+            detailVC.detailTaskModel = thisTask
+        }
     }
     
     //Data source
@@ -50,12 +59,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         println(indexPath.row)
         
-        let taskDict:Dictionary = taskArray[indexPath.row]
+        let currenttask:TaskModel = taskArray[indexPath.row]
         
         var cell: TaskCell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskCell
-        cell.taskLabel.text = taskDict["task"]
-        cell.descriptionLabel.text = taskDict["subtask"]
-        cell.taskDateLabel.text = taskDict["date"]
+        cell.taskLabel.text = currenttask.task
+        cell.descriptionLabel.text = currenttask.subTask
+        cell.taskDateLabel.text = currenttask.date
         
         return cell
     }
@@ -65,7 +74,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //Delegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println("index path \(indexPath.row)")
         
+        performSegueWithIdentifier("showTaskDetail", sender: self)
     }
 
 }
