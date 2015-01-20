@@ -17,6 +17,7 @@
 		A1C4FC561A68FF03009A9502 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C4FC541A68FF03009A9502 /* LaunchScreen.xib */; };
 		A1C4FC621A68FF03009A9502 /* TsskItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4FC611A68FF03009A9502 /* TsskItTests.swift */; };
 		A1C4FC6C1A6904C4009A9502 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4FC6B1A6904C4009A9502 /* TaskCell.swift */; };
+		A1C4FC6E1A6E4811009A9502 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4FC6D1A6E4811009A9502 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		A1C4FC601A68FF03009A9502 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1C4FC611A68FF03009A9502 /* TsskItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TsskItTests.swift; sourceTree = "<group>"; };
 		A1C4FC6B1A6904C4009A9502 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		A1C4FC6D1A6E4811009A9502 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				A1C4FC6B1A6904C4009A9502 /* TaskCell.swift */,
 				A1C4FC491A68FF03009A9502 /* Supporting Files */,
 				7A4D27DB1A6DA1710015FC71 /* TaskModel.swift */,
+				A1C4FC6D1A6E4811009A9502 /* Date.swift */,
 			);
 			path = TsskIt;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 			files = (
 				7A4D27E01A6DA5410015FC71 /* TaskDetailViewController.swift in Sources */,
 				7A4D27DC1A6DA1710015FC71 /* TaskModel.swift in Sources */,
+				A1C4FC6E1A6E4811009A9502 /* Date.swift in Sources */,
 				A1C4FC4E1A68FF03009A9502 /* ViewController.swift in Sources */,
 				A1C4FC6C1A6904C4009A9502 /* TaskCell.swift in Sources */,
 				A1C4FC4C1A68FF03009A9502 /* AppDelegate.swift in Sources */,

@@ -23,10 +23,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let task1 = TaskModel(task: "Study French", subTask: "Verbs", date: "01/02/2015")
-        let task2 = TaskModel(task: "Eat dinner", subTask: "burgers", date: "01/02/2015")
+        let date1 = Date.from(year: 2015, month: 02, day: 01)
+        let date2 = Date.from(year: 2015, month: 02, day: 01)
+        let date3 = Date.from(year: 2015, month: 02, day: 02)
+        
+        
+        let task1 = TaskModel(task: "Study French", subTask: "Verbs", date: date1)
+        let task2 = TaskModel(task: "Eat dinner", subTask: "burgers", date: date2)
 
-        taskArray = [task1,task2,TaskModel(task: "Workout", subTask: "gym", date: "02/02/2015")]
+        taskArray = [task1,task2,TaskModel(task: "Workout", subTask: "gym", date: date3)]
         
         self.tableView.reloadData()
         
@@ -64,7 +69,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var cell: TaskCell = tableView.dequeueReusableCellWithIdentifier("myCell") as TaskCell
         cell.taskLabel.text = currenttask.task
         cell.descriptionLabel.text = currenttask.subTask
-        cell.taskDateLabel.text = currenttask.date
+        cell.taskDateLabel.text = Date.toString(date: currenttask.date)
         
         return cell
     }
