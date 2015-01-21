@@ -119,7 +119,11 @@
                                 <action selector="cancelButtonTapped:" destination="X7C-II-wDK" id="2sA-HQ-22w"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="q4s-K7-JSI"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="q4s-K7-JSI">
+                            <connections>
+                                <action selector="doneBarButtonTapped:" destination="X7C-II-wDK" id="iob-c6-taE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

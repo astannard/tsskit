@@ -49,11 +49,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let indexPath = self.tableView.indexPathForSelectedRow()
             let thisTask = taskArray[indexPath!.row]
             detailVC.detailTaskModel = thisTask
+            detailVC.mainVC = self
         }
         else if segue.identifier == "showTaskAdd"{
             let addTaskVC:AddTaskViewController = segue.destinationViewController as AddTaskViewController
             addTaskVC.mainVC = self
         }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView.reloadData()
     }
     
     //Data source
