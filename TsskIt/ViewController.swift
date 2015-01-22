@@ -110,6 +110,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         performSegueWithIdentifier("showTaskDetail", sender: self)
     }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 25
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0{
+            return "To Do"
+        }
+        else{
+            return "Completed"
+        }
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let thisTask = baseArray[indexPath.section][indexPath.row]
+        var newTask = TaskModel(task: thisTask.task, subTask: thisTask.subTask, date: thisTask.date, completed: !thisTask.completed)
+        
+        baseArray[indexPath.section].removeAtIndex(indexPath.row)
+        
+        if(newTask.completed){
+            baseArray[1].append(newTask)
+        }
+        else{
+            baseArray[0].append(newTask)
+        }
+        tableView.reloadData()
+    }
 
 }
 
