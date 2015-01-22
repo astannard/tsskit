@@ -7,6 +7,7 @@
 //
 
 import UIKit
+ 
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -30,7 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let task1 = TaskModel(task: "Study French", subTask: "Verbs", date: date1, completed: false)
         let task2 = TaskModel(task: "Eat dinner", subTask: "burgers", date: date2, completed: false)
-
+        
         var taskArray = [task1,task2,TaskModel(task: "Workout", subTask: "gym", date: date3, completed: false)]
         var completedArray = [TaskModel(task: "Code", subTask: "Task Project", date: Date.from(year: 2015, month: 02, day: 02), completed: true) ]
         

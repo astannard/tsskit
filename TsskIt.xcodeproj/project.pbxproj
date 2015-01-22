@@ -18,6 +18,7 @@
 		A1C4FC621A68FF03009A9502 /* TsskItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4FC611A68FF03009A9502 /* TsskItTests.swift */; };
 		A1C4FC6C1A6904C4009A9502 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4FC6B1A6904C4009A9502 /* TaskCell.swift */; };
 		A1C4FC6E1A6E4811009A9502 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4FC6D1A6E4811009A9502 /* Date.swift */; };
+		A1C4FC701A70EF73009A9502 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C4FC6F1A70EF73009A9502 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		A1C4FC611A68FF03009A9502 /* TsskItTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TsskItTests.swift; sourceTree = "<group>"; };
 		A1C4FC6B1A6904C4009A9502 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		A1C4FC6D1A6E4811009A9502 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		A1C4FC6F1A70EF73009A9502 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C4FC701A70EF73009A9502 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +108,7 @@
 		A1C4FC491A68FF03009A9502 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A1C4FC6F1A70EF73009A9502 /* CoreData.framework */,
 				A1C4FC4A1A68FF03009A9502 /* Info.plist */,
 			);
 			name = "Supporting Files";
