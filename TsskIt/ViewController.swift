@@ -96,6 +96,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if fetchResultsController.sections?.count == 1 {
+            let fetchedObjects = fetchResultsController.fetchedObjects!
+            let testTask:TaskModel = fetchedObjects[0] as TaskModel
+            if testTask.completed == true {
+                return "Completed"
+            }
+            else {
+                return "To do"
+            }
+            
+        }
+        
+        
         if section == 0{
             return "To Do"
         }
@@ -106,7 +120,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         let thisTask = fetchResultsController.objectAtIndexPath(indexPath) as TaskModel
+        
+        
+        
         thisTask.completed = !thisTask.completed.boolValue
+        
+        
+        
+        
+        
         
        (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
     }
