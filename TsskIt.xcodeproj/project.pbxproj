@@ -101,7 +101,6 @@
 				A1C54E9D1A9F0D3B0003C995 /* SettingsViewController.swift */,
 				A1C4FC5E1A68FF03009A9502 /* TsskItTests */,
 				A1C4FC521A68FF03009A9502 /* Images.xcassets */,
-				A1C4FC541A68FF03009A9502 /* LaunchScreen.xib */,
 				A1C4FC6B1A6904C4009A9502 /* TaskCell.swift */,
 				A1C4FC491A68FF03009A9502 /* Supporting Files */,
 				A1C4FC6D1A6E4811009A9502 /* Date.swift */,
@@ -112,6 +111,7 @@
 		A1C4FC491A68FF03009A9502 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A1C4FC541A68FF03009A9502 /* LaunchScreen.xib */,
 				A1DFCE831A723A2B00AE0A72 /* TaskitModel.xcdatamodeld */,
 				A1C4FC4B1A68FF03009A9502 /* AppDelegate.swift */,
 				A1C4FC6F1A70EF73009A9502 /* CoreData.framework */,
